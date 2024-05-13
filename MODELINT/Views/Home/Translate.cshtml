@@ -1,0 +1,32 @@
+﻿@using CoreLibrary.Models
+<div>
+    <h1> Перевод </h1>
+    <form id="translate" method="get" action="/translate-result">
+        <input name="text" type="text" />
+        <input type="submit" value="Submit" />
+
+    </form>
+    @if ((Model != null) && Model.Error != null)
+    {
+        <h3>@Model.Error</h3>
+    }
+
+    @if ((Model != null) && Model.Code != null)
+    {
+        <h3> @Model.Code</h3>
+        <h2>@Model.Message</h2>
+    }
+
+
+</div>
+
+@if (Model != null && Model.Text != null)
+{
+    <div>
+        <h2> Результат перевод </h2>
+        <h3> @Model.Text</h3>
+    </div>
+}
+
+
+

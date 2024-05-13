@@ -1,0 +1,14 @@
+﻿@model CoreLibrary.Models.ResponceLocal
+
+<h1>Перевод валют</h1>
+
+<h2>Дата: @Model.Data</h2>
+
+@foreach (var valute in Model.Valutesloc)
+{
+    <h3>Имя: @valute.NameValue</h3>
+
+    <h4>Код: @valute.CharCode</h4>
+
+    <h5>Значение: @valute.Value</h5>
+}

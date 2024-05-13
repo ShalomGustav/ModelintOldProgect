@@ -1,0 +1,50 @@
+﻿<div>
+    <h1>Регистрация пользователя</h1>
+
+    @if ((Model == null))
+    {
+        <br />
+        <form id="register" method="get" action="/register-result">
+            <div>
+                <h4>Фамилия*</h4>
+                <input name="firstName" type="text" />
+
+                <h4>Имя*</h4>
+                <input name="lastName" type="text" />
+
+                <h4>Логин*</h4>
+                <input name="UserName" type="text" />
+
+                <h4>Пароль;*</h4>
+                <input name="Password" type="text" />
+
+                <h3>Доступ к Яндекс сервису</h3>
+
+                <h4>Ид каталога*</h4>
+                <input name="folderId" type="text" />
+                <h4>Токен*</h4>
+                <input name="bearerToken" type="text" />
+
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
+    }
+
+
+    @if ((Model != null) && Model.Success == false)
+    {
+        <h3> Регистрация не удалась </h3>
+    }
+
+    @if ((Model != null) && Model.IsEmpty == true)
+    {
+        <h3> Заполните все поля </h3>
+    }
+</div>
+
+@if ((Model != null) && Model.Success == true)
+{
+    <h3> Регистрация удалась </h3>
+    <a href="/authorization">Авторизоваться</a>
+
+}

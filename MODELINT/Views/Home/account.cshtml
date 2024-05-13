@@ -1,0 +1,33 @@
+﻿<div>
+    <h1>Личный кабинет</h1>
+    <br />
+    <h2>Учетные данные</h2>
+    <div>
+        <br />
+        <form id="account" method="get" action="/account-update">
+            <div>
+                <h4>Фамилия*</h4>
+                <input name="firstName" type="text" value="@Model.FirstName" />
+
+                <h4>Имя*</h4>
+                <input name="lastName" type="text" value="@Model.LastName" />
+
+                <h4>Логин*</h4>
+                <input name="UserName" type="text" value="@Model.UserName" />
+
+                <h4>Пароль;*</h4>
+                <input name="Password" type="password" value="@Model.Password" />
+
+                <h3>Доступ к Яндекс сервису</h3>
+
+                <h4>Ид каталога*</h4>
+                <input name="folderId" type="text" value="@Model.ycCredentials.YcFolderId" />
+                <h4>Токен*</h4>
+                <input name="bearerToken" type="text" value="@Model.ycCredentials.YcTranslateBearer" />
+
+                <h4>Обновить данные</h4>
+                <input type="submit" value="Update" />
+            </div>
+        </form>
+    </div>
+</div>

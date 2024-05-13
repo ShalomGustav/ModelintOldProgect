@@ -1,0 +1,41 @@
+﻿
+<div>
+    <h1> Авторизация </h1>
+
+    @if ((Model == null))
+    {
+        <h3> Введите ваши данные </h3>
+
+        <form id="authorization" method="get" action="/authorization-result">
+            <div>
+                <h4>Имя пользователя</h4>
+                <input name="userName" type="text" />
+
+                <h4>Пароль</h4>
+                <input name="password" type="text" />
+                <br />
+            </div>
+
+            <input type="submit" value="Submit" />
+
+        </form>
+
+        <a href="/register">Регистрация</a>
+
+        @if ((Model != null) && Model.Success == false)
+        {
+            <h3> Авторизация не удалась </h3>
+        }
+
+        @if ((Model != null) && Model.IsEmpty == true)
+        {
+            <h3> Поле пустое </h3>
+        }
+    }
+</div>
+
+@if ((Model != null) && Model.Success == true)
+{
+    <h3> Авторизация  удалась </h3>
+
+}

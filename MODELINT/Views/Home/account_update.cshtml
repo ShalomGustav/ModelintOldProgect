@@ -1,0 +1,18 @@
+﻿
+@if ((Model != null) && Model.Success == false)
+{
+    <h3> Обновление данных не удалось </h3>
+}
+
+@if ((Model != null) && Model.IsEmpty == true)
+{
+    <h3> Заполните все поля </h3>
+}
+
+
+@if ((Model != null) && Model.Success == true)
+{
+    <h3> Обновление завершено</h3>
+    <a href="/account">Личный кабинет</a>
+
+}
